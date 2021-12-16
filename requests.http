@@ -1,0 +1,21 @@
+@hostname = http://localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+
+### Create User
+POST {{host}}/auth/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "email":"yoyol.guti@gmail.com",
+  "password": "1234567"
+}
+
+### Get user by id
+GET {{host}}/auth/2 HTTP/1.1
+
+### Get users with a given email
+GET {{host}}/auth?email=yomar.guti@gmail.com
+
+### Delete a user by a given id
+DELETE {{host}}/auth/10 HTTP/1.1
